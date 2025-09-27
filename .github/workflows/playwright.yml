@@ -1,0 +1,32 @@
+name: Playwright E2E & Screenshot
+
+on:
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  e2e:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - name: Install dependencies
+        run: npm ci
+      - name: Install Playwright
+        run: npx playwright install
+      - name: Start Angular app
+        run: npx ng serve &
+      - name: Wait for app
+        run: npx wait-on http://localhost:4200
+      - name: Run Playwright test
+        run: npx playwright test
+      - name: Take screenshot
+        run: npx playwright screenshot http://localhost:4200 login-screen.png
+      - name: Upload screenshot
+        uses: actions/upload-artifact@v3
+        with:
+          name: login-screen
+          path: login-screen.png
