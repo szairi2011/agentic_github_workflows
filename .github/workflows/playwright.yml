@@ -26,7 +26,7 @@ jobs:
       - name: Take screenshot
         run: npx playwright screenshot http://localhost:4200 login-screen.png
       - name: Upload screenshot
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: login-screen
           path: login-screen.png
