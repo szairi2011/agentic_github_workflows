@@ -19,7 +19,10 @@
             "polyfills": [],
             "tsConfig": "tsconfig.app.json",
             "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/styles.scss"],
+            "styles": [
+              "@angular/material/prebuilt-themes/indigo-pink.css",
+              "src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -67,7 +70,10 @@
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/styles.scss"],
+            "styles": [
+              "@angular/material/prebuilt-themes/indigo-pink.css",
+              "src/styles.scss"
+            ],
             "scripts": []
           }
         },
@@ -81,5 +87,8 @@
       }
     }
   },
-  "defaultProject": "agentic-github-workflows"
+  "defaultProject": "agentic-github-workflows",
+  "cli": {
+    "analytics": "4a853e68-8260-4586-aa4d-89acccdc8635"
+  }
 }

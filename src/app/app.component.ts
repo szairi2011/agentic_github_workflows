@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  template: `<h1>Bienvenue sur Agentic Github Workflows</h1>`,
+  template: `<router-outlet></router-outlet>`,
   styles: []
 })
 export class AppComponent {}
